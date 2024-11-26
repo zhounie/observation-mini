@@ -1,0 +1,22 @@
+<view class="login">
+  <view class="title">登录</view>
+  <view class="input-box">
+    <view class="input-item">
+      <text class="label">账号</text>
+      <input
+        type="text"
+        value="{{userName}}"
+        maxlength="{{11}}"
+        placeholder="请输入账号"
+        bindinput="onChangePhone"
+      />
+    </view>
+    <view class="input-item">
+      <text class="label">密码</text>
+      <input type="text" password value="{{password}}" placeholder="请输入密码" bindinput="onChangePassword" />
+    </view>
+  </view>
+  <view class="btn-box">
+    <button type="primary" loading="{{loading}}" bind:tap="onLogin">登录</button>
+  </view>
+</view>

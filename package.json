@@ -7,8 +7,7 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "@vant/weapp": "^1.11.7",
-    "mqtt": "^4.3.8"
+    "@vant/weapp": "^1.11.7"
   },
   "devDependencies": {
     "miniprogram-api-typings": "^2.12.0"

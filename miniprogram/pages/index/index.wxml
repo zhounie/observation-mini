@@ -6,7 +6,7 @@
         <text>温度</text>
       </view>
       <view class="item-rigth">
-        <text>100%rh</text>
+        <text>{{temp}}%rh</text>
       </view>
     </view>
     <view class="item">
@@ -15,7 +15,7 @@
         <text>湿度</text>
       </view>
       <view class="item-rigth">
-        <text>100℃</text>
+        <text>{{humi}}℃</text>
       </view>
     </view>
     <view class="item">
@@ -24,7 +24,7 @@
         <text>光照强度</text>
       </view>
       <view class="item-rigth">
-        <text>100%</text>
+        <text>{{lux}}%</text>
       </view>
     </view>
   </view>

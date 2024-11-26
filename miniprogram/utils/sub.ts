@@ -1,24 +1,21 @@
-import mqtt from "mqtt";
+import mqtt from './mqtt.min.js'
 
 const mqttInit = (options) => {
-  const client = mqtt.connect("mqtt://192.168.31.14:8888", {
+  const client = mqtt.connect("wx://127.0.0.1:8888", {
     username: "user",
     password: "123456",
-    protocol: 'mqtt',
-    clientId: 'wxmini',
-    protocolId: 'MQTT',
-    protocolVersion: 3
+    reconnectPeriod: 1000,
+    connectTimeout: 30 * 1000, 
+    clientId: 'wxmini'
   });
   
   client.on("connect", function () {
     console.log("服务器连接成功");
-    console.log(client.options.clientId);
     client.subscribe("/device/set", { qos: 1 });
   });
   
   client.on("message", function (topic, message) {
     console.log("当前topic:", topic);
-
     options.callback(topic, JSON.parse(message.toString()))
   });
   
