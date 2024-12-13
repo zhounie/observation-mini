@@ -1,0 +1,75 @@
+.mine {
+  background: url('http://student-library.oss-cn-hangzhou.aliyuncs.com/book/BG.png') no-repeat top center / cover;
+  .mine-box {
+    height: 100vh;
+    position: relative;
+    padding: 0 40rpx;
+  }
+  .info-box {
+    padding: 0 60rpx;
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 228rpx;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    .name {
+      font-family: PingFangSC, PingFang SC;
+      font-weight: 500;
+      font-size: 48rpx;
+      color: #fff;
+      padding-top: 20rpx;
+    }
+    .phone {
+      font-family: PingFangSC, PingFang SC;
+      font-weight: 500;
+      font-size: 24rpx;
+      color: #fff;
+      padding-top: 20rpx;
+    }
+    .count-box {
+      width: 100%;
+      margin-top: 60rpx;
+      height: 120rpx;
+      background: #fff;
+      border-radius: 60rpx;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      .count-item {
+        font-family: PingFangSC, PingFang SC;
+        font-weight: 500;
+        font-size: 22rpx;
+        color: #186EF0;
+        .num {
+          font-weight: 600;
+          font-size: 36rpx;
+        }
+      }
+      .count-item:first-child {
+        border-right: 1rpx solid #186EF0;;
+      }
+    }
+  }
+  .btn-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 60rpx 70rpx;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 50rpx;
+    button {
+      color: #fff;
+      margin-bottom: 20rpx;
+      background: #126AF0;
+    }
+    .login-btn {
+      color: #000;
+    }
+  }
+}

@@ -1,17 +1,38 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/index/index",
+    "pages/login/login",
     "pages/logs/logs",
-    "pages/login/login"
+    "pages/mine/mine",
+    "pages/alarmRecord/alarmRecord"
   ],
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#186EF0",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "设备",
+        "iconPath": "./assets/images/device.png",
+        "selectedIconPath": "./assets/images/device-active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "./assets/images/mine.png",
+        "selectedIconPath": "./assets/images/mine-active.png"
+      }
+    ]
+  },
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
-    "van-image": "@vant/weapp/image/index"
+    "van-image": "@vant/weapp/image/index",
+    "van-icon": "@vant/weapp/icon/index"
   },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
   "rendererOptions": {

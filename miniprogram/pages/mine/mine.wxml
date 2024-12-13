@@ -1,0 +1,22 @@
+<view class="mine">
+  <view class="mine-box">
+    <view class="info-box">
+      <van-image width="274rpx" height="274rpx" round src="{{ userInfo.avatar }}" />
+      <view class="name">{{userInfo.name}}</view>
+      <view class="phone">{{userInfo.phone || ''}}</view>
+      <view class="count-box">
+        <view class="count-item" bind:tap="onGoAlarmRecord">
+          <view class="num">{{count}}次</view>
+          <view>今日报警</view>
+        </view>
+        <view class="count-item">
+          <!-- <view class="num">100</view> -->
+          <view class="num">环境记录</view>
+        </view>
+      </view>
+    </view>
+    <view class="btn-box">
+      <button type="primary" loading="{{loading}}" bind:tap="onLogout">退出登录</button>
+    </view>
+  </view>
+</view>

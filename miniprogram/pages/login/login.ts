@@ -1,9 +1,13 @@
-
+import { IP } from '../../config/env'
 Page({
   data: {
     userName: '',
     password: '',
-    loading: false
+    loading: false,
+    showPassword: false
+  },
+  onShow() {
+    wx.hideHomeButton()
   },
   onLoad() {
 
@@ -37,7 +41,7 @@ Page({
       loading: true
     })
     wx.request({
-      url: 'http://127.0.0.1:3000/login',
+      url: `${IP}/login`,
       method: 'POST',
       data: {
         userName: this.data.userName,
@@ -46,8 +50,8 @@ Page({
       success(res){
         if (res.data.code === 200) {
           wx.setStorageSync('userInfo', JSON.stringify(res.data.data))
-          wx.navigateTo({
-            url: '/pages/index/index'
+          wx.switchTab({
+            url: '/pages/home/home',
           })
         } else {
           wx.showToast({
@@ -64,6 +68,22 @@ Page({
           loading: false
         })
       }
+    })
+  },
+
+  onShowPassword() {
+    this.setData({
+      showPassword: !this.data.showPassword
+    })
+  },
+  onClearUserName() {
+    this.setData({
+      userName: ''
+    })
+  },
+  onClearPassword() {
+    this.setData({
+      password: ''
     })
   }
 })

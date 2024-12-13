@@ -1,6 +1,6 @@
 
 .login {
-  padding: 20rpx 40rpx;
+  padding: 20rpx 60rpx;
   .title {
     text-align: center;
     font-size: 40rpx;
@@ -9,32 +9,47 @@
     padding-top: 20rpx;
   }
   .input-box {
-    padding-bottom: 40rpx;
+    padding-top: 160rpx;
     .input-item {
       border-bottom: 1rpx solid #ccc;
       display: flex;
       align-items: center;
-      padding: 20rpx;
-      margin-bottom: 20rpx;
+      padding: 20rpx 0;
+      margin-bottom: 30rpx;
       .label {
         border-right: 1rpx solid #ccc;
-        padding-right: 30rpx;
+        padding-right: 38rpx;
         line-height: 40rpx;
-        width: 90rpx;
-        text-align: right;
+        font-family: PingFangSC, PingFang SC;
+        font-weight: 400;
+        font-size: 36rpx;
+        color: #000012;
       }
       input {
         flex: 1;
         font-size: 30rpx;
-        padding: 0 20rpx;
+        padding: 0 28rpx;
         line-height: 40rpx;
+        font-family: PingFangSC, PingFang SC;
+        font-weight: 400;
+        font-size: 34rpx;
+        color: #000012;
       }
+      .icon-box {
+        display: flex;
+        gap: 20rpx;
+      }
+    }
+    .remember {
+      padding-top: 20rpx;
     }
   }
   .btn-box {
+    padding-top: 50rpx;
     button {
       color: #fff;
       margin-bottom: 20rpx;
+      background: #126AF0;
     }
     .login-btn {
       color: #000;

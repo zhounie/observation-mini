@@ -1,5 +1,4 @@
 <view class="login">
-  <view class="title">登录</view>
   <view class="input-box">
     <view class="input-item">
       <text class="label">账号</text>
@@ -10,10 +9,25 @@
         placeholder="请输入账号"
         bindinput="onChangePhone"
       />
+      <van-icon name="cross" color="#C4C8CC" size="52rpx" bind:tap="onClearUserName" />
     </view>
     <view class="input-item">
       <text class="label">密码</text>
-      <input type="text" password value="{{password}}" placeholder="请输入密码" bindinput="onChangePassword" />
+      <input type="text" password="{{!showPassword}}" value="{{password}}" placeholder="请输入密码" bindinput="onChangePassword" />
+      <view class="icon-box">
+        <van-icon
+          wx:if="{{showPassword}}"
+          name="closed-eye"
+          color="#C4C8CC"
+          size="46rpx" bind:tap="onShowPassword" />
+        <van-icon  wx:else name="eye" color="#C4C8CC" size="46rpx" bind:tap="onShowPassword" />
+        <van-icon name="cross" color="#C4C8CC" size="52rpx" bind:tap="onClearPassword" />
+      </view>
+    </view>
+    <view class="remember">
+      <label class="checkbox">
+        <checkbox value="cb" color="#126AF0" checked="true" />记住密码
+      </label>
     </view>
   </view>
   <view class="btn-box">
