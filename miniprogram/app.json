@@ -5,7 +5,8 @@
     "pages/login/login",
     "pages/logs/logs",
     "pages/mine/mine",
-    "pages/alarmRecord/alarmRecord"
+    "pages/alarmRecord/alarmRecord",
+    "pages/handlingAlarm/handlingAlarm"
   ],
   "tabBar": {
     "color": "#666666",

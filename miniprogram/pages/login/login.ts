@@ -49,7 +49,7 @@ Page({
       },
       success(res){
         if (res.data.code === 200) {
-          wx.setStorageSync('userInfo', JSON.stringify(res.data.data))
+          wx.setStorageSync('userInfo', res.data.data)
           wx.switchTab({
             url: '/pages/home/home',
           })

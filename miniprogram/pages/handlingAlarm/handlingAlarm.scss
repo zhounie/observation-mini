@@ -1,0 +1,41 @@
+.handling-alarm {
+  padding: 70rpx 60rpx;
+  .title {
+    font-family: PingFangSC, PingFang SC;
+    font-weight: 400;
+    font-size: 44rpx;
+    color: #000012;
+    padding-bottom: 20rpx;
+  }
+  .time {
+    font-family: PingFangSC, PingFang SC;
+    font-weight: 400;
+    font-size: 30rpx;
+    color: #C4C8CC;
+    padding-bottom: 20rpx;
+  }
+  .info {
+    font-family: PingFangSC, PingFang SC;
+    font-size: 30rpx;
+    color: #126AF0;
+    padding-bottom: 10rpx;
+  }
+  .tips {
+    font-family: PingFangSC, PingFang SC;
+    font-weight: 400;
+    font-size: 30rpx;
+    color: #000000;
+    padding-top: 30rpx;
+  }
+  .btn-box {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 80rpx 70rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 60rpx;
+  }
+}

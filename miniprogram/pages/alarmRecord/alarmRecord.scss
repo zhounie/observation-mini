@@ -1,1 +1,26 @@
-/* pages/alarmRecord/alarmRecord.wxss */
+.box {
+  padding: 30rpx;
+}
+.item{
+  background: #F9F9F9;
+  margin-bottom: 30rpx;
+  padding: 28rpx;
+  .info-item {
+    padding-bottom: 20rpx;
+  }
+  .label {
+    font-family: PingFangSC, PingFang SC;
+    font-weight: 400;
+    font-size: 34rpx;
+    color: #000000;
+    text-align: right;
+    width: 200rpx;
+    display: inline-block;
+  }
+  .value{
+    font-family: PingFangSC, PingFang SC;
+    font-weight: 400;
+    font-size: 34rpx;
+    color: #555555;
+  }
+}

@@ -14,6 +14,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/alarmRecord/alarmRecord",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/handlingAlarm/handlingAlarm",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

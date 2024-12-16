@@ -14,7 +14,7 @@ Page({
   onLoad() {
     this.handleGetCount()
     this.setData({
-      userInfo: JSON.parse(wx.getStorageSync("userInfo") || '{}')
+      userInfo: wx.getStorageSync("userInfo")
     })
   },
 

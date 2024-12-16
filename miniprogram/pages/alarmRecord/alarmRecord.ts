@@ -1,66 +1,30 @@
-// pages/alarmRecord/alarmRecord.ts
+import { request } from '../../utils/request'
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    list: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad() {
-
+    this.handleGetList()
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  handleGetList() {
+    request('/alarmRecord', 'GET', {}).then(res => {
+      if (res.code === 200) {
+        const Status = ['未处理', '误报', '设备调试', '真实报警']
+        this.setData({
+          list: res.data.map(item => {
+            return {
+              ...item,
+              typeName: item.type === 1 ? '有害气体浓度超标' : '温度过高',
+              statusName: Status[item.status]
+            }
+          })
+        })
+      } else {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none'
+        })
+      }
+    })
   }
 })

@@ -1,2 +1,26 @@
-<!--pages/alarmRecord/alarmRecord.wxml-->
-<text>pages/alarmRecord/alarmRecord.wxml</text>
+<view>
+  <view class="box">
+    <view class="item" wx:for="{{list}}">
+      <view class="info-item">
+        <text class="label">仓库名称：</text>
+        <text class="value">{{item.warehouseName}}</text>
+      </view>
+      <view class="info-item">
+        <text class="label">设备名称：</text>
+        <text class="value">{{item.deviceName}}</text>
+      </view>
+      <view class="info-item">
+        <text class="label">报警类型：</text>
+        <text class="value">{{item.typeName}}</text>
+      </view>
+      <view class="info-item">
+        <text class="label">处理状态：</text>
+        <text class="value">{{item.statusName}}</text>
+      </view>
+      <view>
+        <text class="label">报警时间：</text>
+        <text class="value">{{item.createTime}}</text>
+      </view>
+    </view>
+  </view>
+</view>
