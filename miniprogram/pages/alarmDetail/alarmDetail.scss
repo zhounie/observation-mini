@@ -1,0 +1,40 @@
+.alarm-detail {
+  padding: 30rpx;
+  background: #F9F9F9;
+  box-sizing: border-box;
+  height: 100vh;
+  .status-name {
+    font-family: PingFangSC, PingFang SC;
+    font-weight: 600;
+    font-size: 38rpx;
+    color: #000;
+    padding-bottom: 20rpx;
+    box-sizing: border-box;
+    text-align: left;
+  }
+  .info-box {
+    background: #fff;
+    padding: 30rpx;
+    border-radius: 20rpx;
+    margin-bottom: 30rpx;
+    .info-item {
+      padding-bottom: 20rpx;
+    }
+    .label {
+      font-family: PingFangSC, PingFang SC;
+      font-weight: 400;
+      font-size: 34rpx;
+      color: #000000;
+      text-align: right;
+    }
+    .value{
+      font-family: PingFangSC, PingFang SC;
+      font-weight: 400;
+      font-size: 34rpx;
+      color: #555555;
+    }
+  }
+  .btn-box {
+    padding-top: 60rpx;
+  }
+}

@@ -3,7 +3,7 @@ Page({
   data: {
     list: []
   },
-  onLoad() {
+  onShow() {
     this.handleGetList()
   },
   handleGetList() {
@@ -25,6 +25,16 @@ Page({
           icon: 'none'
         })
       }
+    })
+  },
+  onGoDetail(e) {
+    wx.navigateTo({
+      url: `/pages/alarmDetail/alarmDetail?id=${e.currentTarget.dataset.item.id}`
+    })
+  },
+  onGoHandling(e) {
+    wx.navigateTo({
+      url: `/pages/handlingAlarm/handlingAlarm?id=${e.currentTarget.dataset.item.id}`
     })
   }
 })

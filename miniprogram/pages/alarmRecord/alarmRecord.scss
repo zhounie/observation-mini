@@ -1,10 +1,26 @@
 .box {
   padding: 30rpx;
-}
-.item{
   background: #F9F9F9;
+}
+.item {
   margin-bottom: 30rpx;
   padding: 28rpx;
+  background:#fff;
+  .status-name {
+    font-family: PingFangSC, PingFang SC;
+    font-weight: 600;
+    font-size: 34rpx;
+    color: #000000;
+    text-align: right;
+    display: inline-block;
+    padding-bottom: 20rpx;
+    box-sizing: border-box;
+  }
+  .info-box {
+    background: #F9F9F9;
+    padding: 20rpx;
+    box-sizing: border-box;
+  }
   .info-item {
     padding-bottom: 20rpx;
   }
@@ -14,13 +30,15 @@
     font-size: 34rpx;
     color: #000000;
     text-align: right;
-    width: 200rpx;
-    display: inline-block;
   }
   .value{
     font-family: PingFangSC, PingFang SC;
     font-weight: 400;
     font-size: 34rpx;
     color: #555555;
+  }
+  .btn-box {
+    padding-top: 20rpx;
+    text-align: right;
   }
 }

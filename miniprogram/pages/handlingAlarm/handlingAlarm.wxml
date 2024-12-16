@@ -1,14 +1,26 @@
 <view class="handling-alarm">
   <view class="title">设备报警</view>
-  <view class="time">2024-10-10 21:32:52</view>
-  <view class="info">报警仓库：</view>
-  <view class="info">仓库地址：</view>
-  <view class="info">报警设备：</view>
-  <view class="info">报警类型：</view>
+  <view class="time">{{alarmInfo.createTime}}</view>
+  <view class="info">报警仓库：{{alarmInfo.warehouseName}}</view>
+  <view class="info">仓库地址：{{alarmInfo.address}}</view>
+  <view class="info">报警设备：{{alarmInfo.deviceName}}</view>
+  <view class="info">报警类型：{{alarmInfo.typeName}}</view>
   <view class="tips">请值班人员火速前往确认！！！</view>
   <view class="btn-box">
-    <van-button block plain color="#f59e0b">确认误报</van-button>
-    <van-button block plain color="#3b82f6">设备调试</van-button>
-    <van-button block plain color="#ef4444">真实报警</van-button>
+    <van-button block plain color="#f59e0b" bindtap="onConfirm" data-type="0">确认误报</van-button>
+    <van-button block plain color="#3b82f6" bindtap="onConfirm" data-type="1">设备调试</van-button>
+    <van-button block plain color="#ef4444" bindtap="onConfirm" data-type="2">真实报警</van-button>
   </view>
 </view>
+
+<van-dialog
+    use-slot
+    show="{{ show }}"
+    show-cancel-button
+    bind:confirm="onConfirmStatus"
+  >
+    <view class="dialog-box">
+      <view class="dialog-title">确定是<text class="type">{{typeName}}</text>？</view>
+      <view class="dialog-subtitle">(确定后将无法更改)</view>
+    </view>
+  </van-dialog>

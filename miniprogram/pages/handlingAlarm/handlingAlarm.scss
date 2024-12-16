@@ -39,3 +39,24 @@
     gap: 60rpx;
   }
 }
+
+.dialog-box {
+  padding: 80rpx;
+  text-align: center;
+  .dialog-title {
+    font-family: PingFangSC, PingFang SC;
+    font-weight: 400;
+    font-size: 38rpx;
+    color: #333;
+  }
+  .dialog-subtitle {
+    font-family: PingFangSC, PingFang SC;
+    font-weight: 400;
+    font-size: 30rpx;
+    color: #C4C8CC;
+    padding-top: 12rpx;
+  }
+  .type {
+    color: #126AF0;
+  }
+}

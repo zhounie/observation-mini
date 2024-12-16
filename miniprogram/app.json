@@ -6,7 +6,8 @@
     "pages/logs/logs",
     "pages/mine/mine",
     "pages/alarmRecord/alarmRecord",
-    "pages/handlingAlarm/handlingAlarm"
+    "pages/handlingAlarm/handlingAlarm",
+    "pages/alarmDetail/alarmDetail"
   ],
   "tabBar": {
     "color": "#666666",
@@ -29,7 +30,8 @@
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
     "van-image": "@vant/weapp/image/index",
-    "van-icon": "@vant/weapp/icon/index"
+    "van-icon": "@vant/weapp/icon/index",
+    "van-dialog": "@vant/weapp/dialog/index"
   },
   "window": {
     "backgroundTextStyle": "light",
