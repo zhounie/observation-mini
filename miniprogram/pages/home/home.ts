@@ -1,5 +1,6 @@
 import { IP } from '../../config/env'
 import { isLogin } from '../../utils/util'
+import { request } from '../../utils/request'
 Page({
 
   data: {
@@ -22,35 +23,21 @@ Page({
   },
 
   handleGetList() {
-    wx.request({
-      url: `${IP}/device`,
-      method: 'GET',
-      data: {
-        deviceName: this.data.searchValue,
-        status: 1
-      },
-      success: (res) => {
-        if (res.data.code === 200) {
-          this.setData({
-            deviceList: res.data.data
-          })
-        } else {
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none'
-          })
-        }
-      },
-      fail(err) {
-        console.log(err);
-      },
-      complete: () => {
+    request('/device', 'GET', {
+      text: this.data.searchValue,
+      status: 1
+    }).then(res => {
+      if (res.code === 200) {
         this.setData({
-          loading: false
+          deviceList: res.data
+        })
+      } else {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none'
         })
       }
     })
-
   },
 
   onSearch(e) {

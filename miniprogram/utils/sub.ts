@@ -1,7 +1,7 @@
 import mqtt from './mqtt.min.js'
 
 const mqttInit = (options) => {
-  const client = mqtt.connect("wx://127.0.0.1:8888", {
+  const client = mqtt.connect("wx://121.199.13.81:8888", {
     username: "user",
     password: "123456",
     reconnectPeriod: 1000,

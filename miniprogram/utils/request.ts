@@ -11,6 +11,12 @@ export const request = (path: string, method: 'POST' | 'GET' | 'DELETE' | 'PUT',
       },
       data: params,
       success(res){
+        if (res.data.code === 401) {
+          wx.reLaunch({
+            url: '/pages/login/login'
+          })
+          return
+        }
         resolve(res.data)
       },
       fail(err) {

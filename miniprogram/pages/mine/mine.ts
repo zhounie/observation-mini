@@ -10,9 +10,9 @@ Page({
 
   onShow() {
     isLogin()
+    this.handleGetCount()
   },
   onLoad() {
-    this.handleGetCount()
     this.setData({
       userInfo: wx.getStorageSync("userInfo")
     })

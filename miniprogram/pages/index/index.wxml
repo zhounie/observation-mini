@@ -30,10 +30,7 @@
   </view>
   <view class="btn-box">
     <view>
-      <van-button block plain type="danger">关闭报警</van-button>
-    </view>
-    <view>
-      <van-button block plain type="info">打开风扇</van-button>
+      <van-button block plain type="danger" bind:tap="onClose">关闭报警</van-button>
     </view>
   </view>
 </view>
