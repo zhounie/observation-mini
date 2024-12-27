@@ -4,7 +4,8 @@ Page({
   data: {
     temp: 0,
     humi: 0,
-    lux: 0
+    lux: 0,
+    mq2: 0
   },
   onLoad() {
     mqttInit({
@@ -19,7 +20,8 @@ Page({
     this.setData({
       temp: data.temp,
       humi: data.humi,
-      lux: data.lux
+      lux: data.lux,
+      mq2: data.mq2
     })
   }
 })

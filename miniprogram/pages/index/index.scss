@@ -2,20 +2,21 @@
 .index {
   height: 100vh;
   padding: 20rpx 40rpx;
+  box-sizing: border-box;
 }
 .item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1rpx solid #ccc;
+  border: 1rpx solid #186EF0;
   border-radius: 10rpx;
-  padding: 20rpx;
+  padding: 30rpx;
   margin-bottom: 30rpx;
-  font-size: 40rpx;
+  font-size: 36rpx;
   .item-left {
     display: flex;
     align-items: center;
-    gap: 20rpx;
+    gap: 30rpx;
   }
 }
 .btn-box {

@@ -2,7 +2,7 @@
   <view class="item-box">
     <view class="item">
       <view class="item-left">
-        <van-image width="60" height="60" src="/assets/images/temp.png" />
+        <van-image width="40" height="40" src="/assets/images/daqiwendu.png" />
         <text>温度</text>
       </view>
       <view class="item-rigth">
@@ -11,7 +11,7 @@
     </view>
     <view class="item">
       <view class="item-left">
-        <van-image width="60" height="60" src="/assets/images/humi.png" />
+        <van-image width="40" height="40" src="/assets/images/daqishidu.png" />
         <text>湿度</text>
       </view>
       <view class="item-rigth">
@@ -20,11 +20,20 @@
     </view>
     <view class="item">
       <view class="item-left">
-        <van-image width="60" height="60" src="/assets/images/light.png" />
+        <van-image width="40" height="40" src="/assets/images/rizhaoshishu.png" />
         <text>光照强度</text>
       </view>
       <view class="item-rigth">
         <text>{{lux}}%</text>
+      </view>
+    </view>
+    <view class="item">
+      <view class="item-left">
+        <van-image width="40" height="40" src="/assets/images/PM10.png" />
+        <text>有害气体浓度</text>
+      </view>
+      <view class="item-rigth">
+        <text>{{mq2}}%</text>
       </view>
     </view>
   </view>

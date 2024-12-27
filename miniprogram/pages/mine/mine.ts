@@ -1,6 +1,7 @@
 import { IP } from '../../config/env'
 import { isLogin } from '../../utils/util'
 import dayjs from 'dayjs'
+import { request } from '../../utils/request'
 Page({
 
   data: {
@@ -26,30 +27,17 @@ Page({
   },
 
   handleGetCount() {
-    wx.request({
-      url: `${IP}/alarmCount`,
-      method: 'POST',
-      data: {
-        date: dayjs().format('YYYY-MM-DD')
-      },
-      success: (res) => {
-        if (res.data.code === 200) {
-          this.setData({
-            count: res.data.data.length
-          })
-        } else {
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none'
-          })
-        }
-      },
-      fail(err) {
-        console.log(err);
-      },
-      complete: () => {
+    request('/alarmRecord', 'GET', {
+      dateType: 0
+    }).then(res => {
+      if (res.code === 200) {
         this.setData({
-          loading: false
+          count: res.data.length
+        })
+      } else {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none'
         })
       }
     })

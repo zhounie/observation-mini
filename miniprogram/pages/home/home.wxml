@@ -10,7 +10,7 @@
     </view>
     <view class="device-item" wx:for="{{deviceList}}" bind:tap="onGo">
       <view class="device-item-left">
-        <image wx:if="{{true}}" src="/assets/images/online.png" mode="" />
+        <image wx:if="{{item.isOnline}}" src="/assets/images/online.png" mode="" />
         <image wx:else src="/assets/images/offline.png" mode="" />
         <view>{{ item.warehouseName }}-{{ item.deviceName }}</view>
       </view>
