@@ -5,9 +5,13 @@ Page({
     temp: 0,
     humi: 0,
     lux: 0,
-    mq2: 0
+    mq2: 0,
+    uuid: undefined
   },
-  onLoad() {
+  onLoad(options) {
+    this.setData({
+      uuid: options.uuid
+    })
     mqttInit({
       callback: this.message
     })
@@ -16,12 +20,13 @@ Page({
     isLogin()
   },
   message(topic, data) {
-    console.log(topic, data);
-    this.setData({
-      temp: data.temp,
-      humi: data.humi,
-      lux: data.lux,
-      mq2: data.mq2
-    })
+    if (topic === '/device/set' && data.uuid == this.data.uuid) {
+      this.setData({
+        temp: data.temp,
+        humi: data.humi,
+        lux: data.lux,
+        mq2: data.mq2
+      })
+    }
   }
 })

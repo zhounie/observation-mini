@@ -8,7 +8,7 @@
       <van-image width="186rpx" height="166rpx" src="/assets/images/empty.png" mode=""/>
       <view class="empty-text">暂无设备</view>
     </view>
-    <view class="device-item" wx:for="{{deviceList}}" bind:tap="onGo">
+    <view class="device-item" wx:for="{{deviceList}}" data-item="{{item}}" bind:tap="onGo">
       <view class="device-item-left">
         <image wx:if="{{item.isOnline}}" src="/assets/images/online.png" mode="" />
         <image wx:else src="/assets/images/offline.png" mode="" />

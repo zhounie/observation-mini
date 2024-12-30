@@ -10,9 +10,6 @@ Page({
 
   onShow() {
     isLogin()
-  },
-
-  onLoad() {
     this.handleGetList()
   },
 
@@ -43,9 +40,16 @@ Page({
   onSearch(e) {
     this.handleGetList()
   },
-  onGo() {
-    wx.navigateTo({
-      url: "/pages/index/index"
-    })
+  onGo(e) {
+    if (e.currentTarget.dataset.item.isOnline) {
+      wx.navigateTo({
+        url: `/pages/index/index?uuid=${e.currentTarget.dataset.item.uuid}`
+      })
+    } else {
+      wx.showToast({
+        title: '设备已离线',
+        icon: 'none'
+      })
+    }
   }
 })
