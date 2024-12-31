@@ -6,7 +6,7 @@
         <text>温度</text>
       </view>
       <view class="item-rigth">
-        <text>{{temp}}%rh</text>
+        <text>{{temp}}℃</text>
       </view>
     </view>
     <view class="item">
@@ -15,7 +15,7 @@
         <text>湿度</text>
       </view>
       <view class="item-rigth">
-        <text>{{humi}}℃</text>
+        <text>{{humi}}%rh</text>
       </view>
     </view>
     <view class="item">
@@ -33,13 +33,17 @@
         <text>有害气体浓度</text>
       </view>
       <view class="item-rigth">
-        <text>{{mq2}}%</text>
+        <text>{{mq2}}ppm</text>
       </view>
     </view>
   </view>
-  <view class="btn-box">
+  <view>
+    <view>上线时间：</view>
+    <view>运行时长：</view>
+  </view>
+  <view class="btn-box" wx:if="{{isAlarm}}">
     <view>
-      <van-button block plain type="danger" bind:tap="onClose">关闭报警</van-button>
+      <van-button block plain type="danger" bind:tap="onClose">预警确认</van-button>
     </view>
   </view>
 </view>

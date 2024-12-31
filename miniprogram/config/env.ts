@@ -7,7 +7,7 @@ if (envVersion === 'release') { // 正式版
 } else if (envVersion === 'trial') { // 	体验版
   IP = 'http://121.199.13.81:3000'
 } else { // 开发版
-  IP = 'http://localhost:3000'
+  IP = 'http://121.199.13.81:3000'
 }
 
 export {

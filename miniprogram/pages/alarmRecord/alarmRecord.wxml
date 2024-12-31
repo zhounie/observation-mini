@@ -21,7 +21,7 @@
         </view>
       </view>
       <view class="btn-box" wx:if="{{item.status === 0}}">
-        <van-button type="info" size="small" bindtap="onGoHandling" data-item="{{item}}">处理</van-button>
+        <van-button type="info" size="small" bindtap="onGoHandling" data-item="{{item}}">预警确认</van-button>
       </view>
     </view>
   </view>
