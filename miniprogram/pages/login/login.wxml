@@ -1,4 +1,5 @@
 <view class="login">
+  <view class="title">登录</view>
   <view class="input-box">
     <view class="input-item">
       <text class="label">账号</text>

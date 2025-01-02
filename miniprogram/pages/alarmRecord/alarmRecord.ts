@@ -1,13 +1,25 @@
 import { request } from '../../utils/request'
 Page({
   data: {
-    list: []
+    list: [],
+    type: '1'
+  },
+  onLoad(options) {
+    this.setData({
+      type: options.type
+    })
   },
   onShow() {
     this.handleGetList()
   },
   handleGetList() {
-    request('/alarmRecord', 'GET', {}).then(res => {
+    const params = {
+      dateType: 0
+    }
+    if (this.data.type === '0') {
+      params.status = 0
+    }
+    request('/alarmRecord', 'GET', params).then(res => {
       if (res.code === 200) {
         const Status = ['未处理', '误报', '设备调试', '真实报警']
         this.setData({

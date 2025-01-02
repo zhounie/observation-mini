@@ -8,18 +8,24 @@ Page({
     lux: 0,
     mq2: 0,
     uuid: undefined,
-    isAlarm: false
+    isAlarm: false,
+    mqttInstance: null,
+    id: undefined,
+    deviceDetail: {}
   },
   onLoad(options) {
-    this.setData({
-      uuid: options.uuid
-    })
-    mqttInit({
+    const mqttInstance = mqttInit({
       callback: this.message
+    })
+    this.setData({
+      uuid: options.uuid,
+      id: options.id,
+      mqttInstance
     })
   },
   onShow() {
     isLogin()
+    this.handleGetDeviceDetail()
     this.handleGetAlarmList()
   },
   message(topic, data) {
@@ -32,6 +38,15 @@ Page({
       })
     }
   },
+  handleGetDeviceDetail() {
+    request(`/deviceDetail/${this.data.id}`, 'GET', {}).then(res => {
+      if (res.code === 200) {
+        this.setData({
+          deviceDetail: res.data
+        })
+      }
+    })
+  },
   handleGetAlarmList() {
     request('/alarmRecord', 'GET', {
       status: 0,
@@ -43,5 +58,13 @@ Page({
         })
       }
     })
+  },
+  onHide() {
+    console.log(1111);
+    this.data.mqttInstance.end()
+  },
+  onUnload() {
+    console.log(222);
+    this.data.mqttInstance.end()
   }
 })

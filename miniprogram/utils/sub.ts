@@ -26,6 +26,8 @@ const mqttInit = (options) => {
   client.on("disconnect", function (packet) {
     console.log('连接断开');
   });
+
+  return client
 }
 
 const handleGetDeviceList = () => {

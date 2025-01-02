@@ -43,7 +43,7 @@ Page({
   onGo(e) {
     if (e.currentTarget.dataset.item.isOnline) {
       wx.navigateTo({
-        url: `/pages/index/index?uuid=${e.currentTarget.dataset.item.uuid}`
+        url: `/pages/index/index?uuid=${e.currentTarget.dataset.item.uuid}&id=${e.currentTarget.dataset.item.id}`
       })
     } else {
       wx.showToast({

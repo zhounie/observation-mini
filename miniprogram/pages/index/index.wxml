@@ -1,6 +1,6 @@
 <view class="index">
   <view class="item-box">
-    <view class="item">
+    <view class="item {{temp > deviceDetail.tempVpt ? 'warning' : ''}}">
       <view class="item-left">
         <van-image width="40" height="40" src="/assets/images/daqiwendu.png" />
         <text>温度</text>
@@ -9,7 +9,7 @@
         <text>{{temp}}℃</text>
       </view>
     </view>
-    <view class="item">
+    <view class="item {{humi > deviceDetail.humiVpt ? 'warning' : ''}}">
       <view class="item-left">
         <van-image width="40" height="40" src="/assets/images/daqishidu.png" />
         <text>湿度</text>
@@ -27,7 +27,7 @@
         <text>{{lux}}%</text>
       </view>
     </view>
-    <view class="item">
+    <view class="item {{mq2 > deviceDetail.mq2Vpt ? 'warning' : ''}}">
       <view class="item-left">
         <van-image width="40" height="40" src="/assets/images/PM10.png" />
         <text>有害气体浓度</text>
@@ -37,9 +37,11 @@
       </view>
     </view>
   </view>
-  <view>
-    <view>上线时间：</view>
-    <view>运行时长：</view>
+  <view class="detail-box">
+    <view>设备：{{deviceDetail.warehouseName}}-{{deviceDetail.deviceName}}</view>
+    <view>本月预警次数：{{deviceDetail.monthCount}}</view>
+    <view>今日预警次数：{{deviceDetail.dayCount}}</view>
+    <view>误报率：{{deviceDetail.falseAlarmRate * 100}}%</view>
   </view>
   <view class="btn-box" wx:if="{{isAlarm}}">
     <view>

@@ -19,8 +19,18 @@
     gap: 30rpx;
   }
 }
+.item.warning {
+  border: 1rpx solid rgba(240, 24, 24, 0.6);
+}
 .btn-box {
   display: flex;
   flex-direction: column;
   gap: 20rpx;
+  padding-top: 40rpx;
+}
+.detail-box {
+  padding: 20rpx;
+  border-radius: 10rpx;
+  background: #f0f0f0;
+  line-height: 60rpx;
 }

@@ -6,7 +6,8 @@ Page({
 
   data: {
     userInfo: {},
-    count: 0
+    count: 0,
+    unCount: 0
   },
 
   onShow() {
@@ -41,11 +42,26 @@ Page({
         })
       }
     })
+    request('/alarmRecord', 'GET', {
+      dateType: 0,
+      status: 0
+    }).then(res => {
+      if (res.code === 200) {
+        this.setData({
+          unCount: res.data.length
+        })
+      } else {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none'
+        })
+      }
+    })
   },
 
-  onGoAlarmRecord() {
+  onGoAlarmRecord(e) {
     wx.navigateTo({
-      url: '/pages/alarmRecord/alarmRecord'
+      url: `/pages/alarmRecord/alarmRecord?type=${e.currentTarget.dataset.type}`
     })
   }
 })

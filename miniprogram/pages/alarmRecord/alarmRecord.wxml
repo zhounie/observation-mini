@@ -1,5 +1,6 @@
 <view>
   <view class="box">
+    <van-empty wx:if="{{!list.length}}" description="暂无预警记录" />
     <view class="item" wx:for="{{list}}" data-item="{{item}}">
       <view class="status-name">{{item.statusName}}</view>
       <view class="info-box" bindtap="onGoDetail" data-item="{{item}}">
