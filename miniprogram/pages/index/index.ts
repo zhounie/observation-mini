@@ -11,7 +11,8 @@ Page({
     isAlarm: false,
     mqttInstance: null,
     id: undefined,
-    deviceDetail: {}
+    deviceDetail: {},
+    alarmList: []
   },
   onLoad(options) {
     const mqttInstance = mqttInit({
@@ -41,6 +42,7 @@ Page({
   handleGetDeviceDetail() {
     request(`/deviceDetail/${this.data.id}`, 'GET', {}).then(res => {
       if (res.code === 200) {
+        res.data.falseAlarmRate = Math.round(res.data.falseAlarmRate * 100)
         this.setData({
           deviceDetail: res.data
         })
@@ -54,7 +56,8 @@ Page({
     }).then(res => {
       if (res.code === 200) {
         this.setData({
-          isAlarm: !!res.data.length
+          isAlarm: !!res.data.length,
+          alarmList: res.data
         })
       }
     })
@@ -66,5 +69,10 @@ Page({
   onUnload() {
     console.log(222);
     this.data.mqttInstance.end()
+  },
+  onGo() {
+    wx.navigateTo({
+      url: `/pages/handlingAlarm/handlingAlarm?id=${this.data.alarmList[0].id}`
+    })
   }
 })

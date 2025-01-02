@@ -50,6 +50,7 @@ Page({
       success(res){
         if (res.data.code === 200) {
           wx.setStorageSync('userInfo', res.data.data)
+          wx.setStorageSync('cookies', res.cookies.join(';'))
           wx.switchTab({
             url: '/pages/home/home',
           })

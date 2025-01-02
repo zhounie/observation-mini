@@ -1,6 +1,6 @@
 <view class="device">
   <view class="search">
-    <input value="{{searchValue}}" type="text" placeholder="请输入" bindinput="onInput" />
+    <input value="{{searchValue}}" type="text" placeholder="" bindinput="onInput" />
     <button bind:tap="onSearch">搜索</button>
   </view>
   <view class="device-box">

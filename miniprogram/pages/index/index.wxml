@@ -41,11 +41,11 @@
     <view>设备：{{deviceDetail.warehouseName}}-{{deviceDetail.deviceName}}</view>
     <view>本月预警次数：{{deviceDetail.monthCount}}</view>
     <view>今日预警次数：{{deviceDetail.dayCount}}</view>
-    <view>误报率：{{deviceDetail.falseAlarmRate * 100}}%</view>
+    <view>误报率：{{deviceDetail.falseAlarmRate}}%</view>
   </view>
   <view class="btn-box" wx:if="{{isAlarm}}">
     <view>
-      <van-button block plain type="danger" bind:tap="onClose">预警确认</van-button>
+      <van-button block plain type="danger" bind:tap="onGo">预警确认</van-button>
     </view>
   </view>
 </view>
